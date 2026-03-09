@@ -1,22 +1,21 @@
 ---
-tags:
-  - InSales
-  - claude
-  - llm
-Добавлено: 2026-03-07T13:13
+theme: white
+css: claude-code-slides.css
+highlightTheme: github
+slideNumber: true
 ---
-
-### Claude  Code для работы с кодом 
+### Claude.Ai для работы с кодом 
 
 - Технический обзор Claude Code для разработчиков: установка, модели, оплата и приёмы работы с агентами и контекстом.
 - Олег Дулецкий 7.3.2026
+- [github](https://github.com/dog-64/llm_now?tab=readme-ov-file)
 
 ---
 ### Почему Claude Code
 
 - лидер отрасли
 - удобные тарифы (от $20) и лимиты (5 часовые)
-- cli развивается быстрее всех
+- [развивается очень быстро](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
 
 ---
 ### Модели
@@ -29,14 +28,16 @@ tags:
 ### Как получить доступ  
 
 - VPN для Claude и ChatGPT  
-- [[ClaudeCode через squid прокси]]  / [[http прокси через squid]]
-- [[⭐️ GLM  4.7 - Z.Ai|Z.Ai]]  == [[Claude Code ENVs]]
+- [ClaudeCode через squid прокси](https://github.com/dog-64/claudecode-proxy/settings)
+- GLM  4.7
+	- `export ANTHROPIC_BASE_URL="https://api.z.ai/api/anthropic" ` 
+	- `export ANTHROPIC_DEFAULT_SONNET_MODEL="glm-4.7"`
 - [openrouter.ai](https://openrouter.ai) - покупка токенов через API
-- [[opencode - настройка на cloud.ru glx 4.6]]
+- cloud.ru glx 4.6
 ---
 ### Оплата
 
-- Claude.ai - \$20 - \$100 - \$200 / месяц - кредитки
+- Claude.ai - &#36; 20 - &#36;100 - &#36;200 / месяц - кредитки
 - Claude.Ai - через [plati.market](https://plati.market) около 1500 рублей в месяц, есть гарантия
 - Avito - сопоставимо с [plati.market](https://plati.market)
 - Wantopay - бот в Telegram, делает кредитки
@@ -49,9 +50,9 @@ tags:
 ---
 ### Другие клиенты
 
-- Codex - сопоставимый по моделям и возможностям
+- Open Ai Codex - сопоставимый по моделям и возможностям
 - Kilo Code - часто дает ранний доступ к моделям, не нужен VPN
-- Qwen-Cli - бесплатный доступ к Qwen Coder, не нужен VPN
+- Alibaba Qwen-Cli - бесплатный доступ к Qwen Coder, не нужен VPN
 
 ---
 ## Работаем
@@ -73,7 +74,7 @@ tags:
 
 ```sh
 ❯ pgcat_servers_is_banned - в pgcat была такая метрика 
-- а тут есть?
+- а тут, в PgDog, есть?
 ...
 ⏺ В pgdog нет метрики pgcat_servers_is_banned или аналога.
 Banned статус доступен только:
@@ -90,17 +91,17 @@ Banned статус доступен только:
 Это инструменты концентрации экспертизы по определенной теме.
 Агент - может работать в фоне. Skill нет. 
 Например
-- [агент для поиска решений в Интернете](solution-research-agent.md)
-- [[Rails Way Agent]]
-- [[Ruby Idioms Agent]]
-- [[Rspec Testing Agent]]
-- [[Security Review Agent]]  
-- [[Tech Writer Agent - Ильясов "Пиши. Сокращай"]]  
+- [агент для поиска решений в Интернете]([solution-research-agent.md](https://github.com/dog-64/solution-research-agent))
+- [Rails Way Agent](https://github.com/dog-64/rails-way-agent)
+- [Ruby Idioms Agent](https://github.com/dog-64/ruby-idioms-reviewer)
+- [Rspec Testing Agent](https://github.com/dog-64/rspec-testing-agent)
+- [Security Review Agent](https://github.com/dog-64/security-review-agent)
+- [Tech Writer Agent - Ильясов "Пиши. Сокращай"](https://github.com/dog-64/tech-writing-agent)  
 
 ---
 ### Как использовать агента
 ```
-❯ запусти агента general-purpose
+❯ запусти агента general-purpose для анализа PgDog
 ⏺ Task(Analyze pgdog code quality)
 ⏺ Агент завершил анализ. Найдено 12 проблем:
 
@@ -122,6 +123,19 @@ Banned статус доступен только:
 - говорим Claude - `используй агента pg-internals-agent для анализа работы с Postgres`
 
 ---
+## Полезные skills
+
+- github - работа с репо Github
+- gutlab - работа с репо Gitlab
+- code-simplifier - анализ кода перед MR
+- context7 - доки по куче библиотек 
+
+Установка
+```
+/plugin install context7
+```
+
+---
 ### Контекст  
 
 У него две проблемы - контекста слишком мало или слишком много
@@ -133,21 +147,12 @@ Banned статус доступен только:
 - `/compact` - суммаризация чата 
 - `/plan` - переход в режим планирования 
 - `tasks` - список задачь
-- [[ClaudeCode -ставим mcp context7|Context7]] - доки по куче библиотек  
+- [[ClaudeCode -ставим mcp context7|Context7]] 
 
 ---
---- 
-### Как работать без VPN
+### Приёмы  
 
-- чтобы не заворачивать весь трафик машины через VPN
-- ssh tunnel + squid на VPS в Голландии
-- только `claude` будет работать через tunnel
-- [ClaudeCode через squid прокси](obsidian://open?path=ClaudeCode%20через%20squid%20прокси.md)  / [[http прокси через squid]]
-
----
-### Хитрости  
-
-- когда не получается - спрашивайте "А как сделать..."
+- когда не получается - спрашивайте Claude "А как сделать..."
 - в CLAUDE.md -`после изменений всегда запускай тесты`  
 - голосовой ввод (app Handy)
 - для вставки картинок-скриншотов используйте Ctrl-V

@@ -1,0 +1,214 @@
+/* ============================================================
+   Claude Code — Obsidian Advanced Slides Theme
+   Стиль: тёмный текст на светлом фоне, левое выравнивание,
+   декоративная нейросетевая графика в правом нижнем углу.
+   ============================================================ */
+
+/* ---------- Базовый фон и типографика ---------- */
+.reveal-viewport {
+  background-color: #f0f4f8;
+}
+
+.reveal {
+  background-color: #f0f4f8;
+  color: #1a2332;
+  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 32px;
+}
+
+/* ---------- Слайд: выравнивание по левому краю ---------- */
+/* white.css использует flex с align-items:center — перебиваем через !important */
+.reveal .slides section {
+  text-align: left !important;
+  padding: 20px 40px 20px 40px !important;
+  box-sizing: border-box;
+  /* flex-контейнер внутри секции тоже нужно выровнять */
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+}
+
+/* внутренний flex-враппер, который reveal рендерит вокруг контента */
+.reveal .slides section > div,
+.reveal .slides section .r-fit-text,
+.reveal .slides section .r-stack {
+  text-align: left !important;
+  align-items: flex-start !important;
+}
+
+/* всё что прямо внутри секции — прижать к левому краю */
+.reveal .slides section > * {
+  text-align: left !important;
+  width: 100%;
+}
+
+/* ---------- Декоративный SVG — правый нижний угол ---------- */
+.reveal .slides section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 720px;
+  height: 580px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgMzQwIj4KICA8IS0tIExhcmdlIGJhY2tncm91bmQgcmluZ3MgLS0+CiAgPGNpcmNsZSBjeD0iMzQwIiBjeT0iMjkwIiByPSIyNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzI1NjNlYiIgc3Ryb2tlLXdpZHRoPSIwLjYiIG9wYWNpdHk9IjAuMTIiLz4KICA8Y2lyY2xlIGN4PSIzODAiIGN5PSIzMTAiIHI9IjE3MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjM2I4MmY2IiBzdHJva2Utd2lkdGg9IjAuNiIgb3BhY2l0eT0iMC4xOCIvPgogIDxjaXJjbGUgY3g9IjM2MCIgY3k9IjMwMCIgcj0iMTAwIiBmaWxsPSJub25lIiBzdHJva2U9IiM2MGE1ZmEiIHN0cm9rZS13aWR0aD0iMC41IiBvcGFjaXR5PSIwLjIiLz4KCiAgPCEtLSBOZXR3b3JrIGNvbm5lY3Rpb25zIC0tPgogIDxsaW5lIHgxPSIxNjAiIHkxPSIyMzAiIHgyPSIyNDAiIHkyPSIxODUiIHN0cm9rZT0iIzYwYTVmYSIgc3Ryb2tlLXdpZHRoPSIxLjIiIG9wYWNpdHk9IjAuMzUiLz4KICA8bGluZSB4MT0iMjQwIiB5MT0iMTg1IiB4Mj0iMzEwIiB5Mj0iMjE1IiBzdHJva2U9IiM2MGE1ZmEiIHN0cm9rZS13aWR0aD0iMS4yIiBvcGFjaXR5PSIwLjM1Ii8+CiAgPGxpbmUgeDE9IjMxMCIgeTE9IjIxNSIgeDI9IjM3NSIgeTI9IjE3NSIgc3Ryb2tlPSIjNjBhNWZhIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuMyIvPgogIDxsaW5lIHgxPSIyNDAiIHkxPSIxODUiIHgyPSIyNzUiIHkyPSIxMzUiIHN0cm9rZT0iIzYwYTVmYSIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjM1Ii8+CiAgPGxpbmUgeDE9IjI3NSIgeTE9IjEzNSIgeDI9IjM1MCIgeTI9IjkwIiBzdHJva2U9IiM2MGE1ZmEiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4yNSIvPgogIDxsaW5lIHgxPSIzMTAiIHkxPSIyMTUiIHgyPSIzNjUiIHkyPSIyNjgiIHN0cm9rZT0iIzYwYTVmYSIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjMiLz4KICA8bGluZSB4MT0iMTYwIiB5MT0iMjMwIiB4Mj0iMTk1IiB5Mj0iMjg4IiBzdHJva2U9IiM2MGE1ZmEiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4yNSIvPgogIDxsaW5lIHgxPSIxOTUiIHkxPSIyODgiIHgyPSIyNzUiIHkyPSIzMDgiIHN0cm9rZT0iIzYwYTVmYSIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjI1Ii8+CiAgPGxpbmUgeDE9IjI3NSIgeTE9IjMwOCIgeDI9IjM2NSIgeTI9IjI2OCIgc3Ryb2tlPSIjNjBhNWZhIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuMjUiLz4KICA8bGluZSB4MT0iMzc1IiB5MT0iMTc1IiB4Mj0iMzUwIiB5Mj0iOTAiIHN0cm9rZT0iIzYwYTVmYSIgc3Ryb2tlLXdpZHRoPSIwLjgiIG9wYWNpdHk9IjAuMiIvPgogIDxsaW5lIHgxPSIzOTUiIHkxPSIyMzAiIHgyPSIzNzUiIHkyPSIxNzUiIHN0cm9rZT0iIzYwYTVmYSIgc3Ryb2tlLXdpZHRoPSIwLjgiIG9wYWNpdHk9IjAuMiIvPgogIDxsaW5lIHgxPSIzOTUiIHkxPSIyMzAiIHgyPSIzNjUiIHkyPSIyNjgiIHN0cm9rZT0iIzYwYTVmYSIgc3Ryb2tlLXdpZHRoPSIwLjgiIG9wYWNpdHk9IjAuMiIvPgoKICA8IS0tIERvdHRlZCBhY2NlbnQgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjI0MCIgeTE9IjE4NSIgeDI9IjE5NSIgeTI9IjI4OCIgc3Ryb2tlPSIjOTNjNWZkIiBzdHJva2Utd2lkdGg9IjAuOCIgc3Ryb2tlLWRhc2hhcnJheT0iMyw0IiBvcGFjaXR5PSIwLjIiLz4KICA8bGluZSB4MT0iMjc1IiB5MT0iMTM1IiB4Mj0iMzc1IiB5Mj0iMTc1IiBzdHJva2U9IiM5M2M1ZmQiIHN0cm9rZS13aWR0aD0iMC44IiBzdHJva2UtZGFzaGFycmF5PSIzLDQiIG9wYWNpdHk9IjAuMiIvPgoKICA8IS0tIE1haW4gbm9kZXMgLS0+CiAgPGNpcmNsZSBjeD0iMjQwIiBjeT0iMTg1IiByPSI5IiBmaWxsPSIjMjU2M2ViIiBvcGFjaXR5PSIwLjc1Ii8+CiAgPGNpcmNsZSBjeD0iMjQwIiBjeT0iMTg1IiByPSIxMyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjBhNWZhIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuMzUiLz4KICAKICA8Y2lyY2xlIGN4PSIzMTAiIGN5PSIyMTUiIHI9IjciIGZpbGw9IiMzYjgyZjYiIG9wYWNpdHk9IjAuNyIvPgogIDxjaXJjbGUgY3g9IjI3NSIgY3k9IjEzNSIgcj0iNyIgZmlsbD0iIzNiODJmNiIgb3BhY2l0eT0iMC42NSIvPgogIDxjaXJjbGUgY3g9IjM3NSIgY3k9IjE3NSIgcj0iNiIgZmlsbD0iIzYwYTVmYSIgb3BhY2l0eT0iMC42Ii8+CiAgPGNpcmNsZSBjeD0iMzUwIiBjeT0iOTAiICByPSI1IiBmaWxsPSIjNjBhNWZhIiBvcGFjaXR5PSIwLjUiLz4KICA8Y2lyY2xlIGN4PSIzNjUiIGN5PSIyNjgiIHI9IjciIGZpbGw9IiMzYjgyZjYiIG9wYWNpdHk9IjAuNjUiLz4KICA8Y2lyY2xlIGN4PSIxOTUiIGN5PSIyODgiIHI9IjUiIGZpbGw9IiM2MGE1ZmEiIG9wYWNpdHk9IjAuNTUiLz4KICA8Y2lyY2xlIGN4PSIyNzUiIGN5PSIzMDgiIHI9IjUiIGZpbGw9IiM5M2M1ZmQiIG9wYWNpdHk9IjAuNSIvPgogIDxjaXJjbGUgY3g9IjE2MCIgY3k9IjIzMCIgcj0iNiIgZmlsbD0iIzYwYTVmYSIgb3BhY2l0eT0iMC41NSIvPgogIDxjaXJjbGUgY3g9IjM5NSIgY3k9IjIzMCIgcj0iNSIgZmlsbD0iIzYwYTVmYSIgb3BhY2l0eT0iMC41Ii8+CgogIDwhLS0gU21hbGwgZGVjb3JhdGl2ZSBkb3RzIC0tPgogIDxjaXJjbGUgY3g9IjEzNSIgY3k9IjI2MCIgcj0iMi41IiBmaWxsPSIjOTNjNWZkIiBvcGFjaXR5PSIwLjM1Ii8+CiAgPGNpcmNsZSBjeD0iNDA1IiBjeT0iMTQwIiByPSIyIiAgIGZpbGw9IiM2MGE1ZmEiIG9wYWNpdHk9IjAuMzUiLz4KICA8Y2lyY2xlIGN4PSIyMjAiIGN5PSIyNTAiIHI9IjIiICAgZmlsbD0iIzkzYzVmZCIgb3BhY2l0eT0iMC4zIi8+CiAgPGNpcmNsZSBjeD0iMjk1IiBjeT0iMTU1IiByPSIyIiAgIGZpbGw9IiM5M2M1ZmQiIG9wYWNpdHk9IjAuMzUiLz4KICA8Y2lyY2xlIGN4PSI0MTAiIGN5PSIzMDAiIHI9IjMiICAgZmlsbD0iIzNiODJmNiIgb3BhY2l0eT0iMC40Ii8+CiAgPGNpcmNsZSBjeD0iMzMwIiBjeT0iMzIwIiByPSIyIiAgIGZpbGw9IiM5M2M1ZmQiIG9wYWNpdHk9IjAuMyIvPgogIDxjaXJjbGUgY3g9IjE0MCIgY3k9IjMwNSIgcj0iMiIgICBmaWxsPSIjOTNjNWZkIiBvcGFjaXR5PSIwLjI1Ii8+CiAgPGNpcmNsZSBjeD0iNDE1IiBjeT0iMjAwIiByPSIyIiAgIGZpbGw9IiM2MGE1ZmEiIG9wYWNpdHk9IjAuMyIvPgoKICA8IS0tIEhleGFnb24gYWNjZW50IC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMjU1LDEwMCAyNjgsOTMgMjgxLDEwMCAyODEsMTE0IDI2OCwxMjEgMjU1LDExNCIKICAgICAgICAgICBmaWxsPSJub25lIiBzdHJva2U9IiM2MGE1ZmEiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4zIi8+CiAgPHBvbHlnb24gcG9pbnRzPSIzNDAsMjUwIDM1MCwyNDQgMzYwLDI1MCAzNjAsMjYyIDM1MCwyNjggMzQwLDI2MiIKICAgICAgICAgICBmaWxsPSJub25lIiBzdHJva2U9IiM5M2M1ZmQiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4yNSIvPgo8L3N2Zz4=");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- Заголовки ---------- */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  color: #1e3a5f;
+  text-align: left !important;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.6em;
+}
+
+.reveal h1 { font-size: 1.9em; }
+.reveal h2 { font-size: 1.6em; }
+.reveal h3 { font-size: 1.3em; }
+
+/* ---------- Списки: без смещения вправо ---------- */
+.reveal ul,
+.reveal ol {
+  display: block;
+  margin: 0.3em 0 0.3em 0;
+  padding-left: 1.3em;         /* минимальный отступ только для маркера */
+  list-style-position: outside;
+  text-align: left;
+}
+
+.reveal ul ul,
+.reveal ol ol,
+.reveal ul ol,
+.reveal ol ul {
+  margin-left: 0.8em;          /* вложенные — чуть сдвигаем */
+}
+
+.reveal li {
+  margin: 0.25em 0;
+  padding-left: 0;
+  line-height: 1.45;
+}
+
+/* маркеры: синие точки */
+.reveal ul > li::marker       { color: #2563eb; }
+.reveal ol > li::marker       { color: #2563eb; font-weight: 700; }
+
+/* ---------- Ссылки ---------- */
+.reveal a {
+  color: #2563eb;
+  text-decoration: none;
+  border-bottom: 1px solid #93c5fd;
+}
+.reveal a:hover {
+  color: #1d4ed8;
+  border-bottom-color: #2563eb;
+}
+
+/* ---------- Код ---------- */
+.reveal code {
+  background-color: #dbeafe;
+  color: #1e40af;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 0.65em;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+.reveal pre {
+  background-color: #1e2d40;
+  border-left: 4px solid #2563eb;
+  border-radius: 6px;
+  padding: 0.8em 1em;
+  margin: 0.5em 0;
+  text-align: left;
+  font-size: 0.72em;
+  line-height: 1.5;
+  overflow-x: auto;
+  box-shadow: 0 2px 12px rgba(37,99,235,0.12);
+  /* чтобы код не уходил под декор-картинку */
+  max-width: 80%;
+}
+
+.reveal pre code {
+  background: none;
+  color: #e2e8f0;
+  padding: 0;
+  font-size: 1em;
+}
+
+/* ---------- Сильный акцент / выделение ---------- */
+.reveal strong {
+  color: #1e3a5f;
+  font-weight: 700;
+}
+
+.reveal em {
+  color: #2563eb;
+  font-style: italic;
+}
+
+/* ---------- Нижний колонтитул / номер слайда ---------- */
+.reveal .slide-number {
+  color: #94a3b8;
+  font-size: 0.55em;
+  bottom: 12px;
+  left: 14px;
+  right: auto;
+}
+
+/* ---------- Горизонтальный разделитель ---------- */
+.reveal hr {
+  border: none;
+  border-top: 1px solid #bfdbfe;
+  margin: 0.8em 0;
+}
+
+/* ---------- Цитата ---------- */
+.reveal blockquote {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  color: #334155;
+  font-style: italic;
+  margin: 0.5em 0;
+  text-align: left;
+}
+
+/* ---------- Таблицы ---------- */
+.reveal table {
+  font-size: 0.85em;
+  border-collapse: collapse;
+  width: 100%;
+}
+.reveal table th {
+  background-color: #dbeafe;
+  color: #1e3a5f;
+  padding: 6px 10px;
+  text-align: left;
+  font-weight: 700;
+}
+.reveal table td {
+  padding: 5px 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+.reveal table tr:hover td {
+  background-color: #eff6ff;
+}
+
+/* ---------- Прогресс и курсор навигации ---------- */
+.reveal .progress {
+  background: #bfdbfe;
+  height: 3px;
+}
+.reveal .progress span {
+  background: #2563eb;
+}

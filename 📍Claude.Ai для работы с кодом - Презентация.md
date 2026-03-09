@@ -1,15 +1,19 @@
 ---
 theme: white
-css: claude-code-slides.css
+css: _resources/llm_now/claude-code-slides.css
 highlightTheme: github
 slideNumber: true
+tags:
+  - llm
+  - claude
 ---
 ### Claude.Ai для работы с кодом 
 
-- Технический обзор Claude Code для разработчиков: установка, модели, оплата и приёмы работы с агентами и контекстом.
+- Тех- обзор Claude Code для разработчиков: установка, модели, оплата и приёмы работы с агентами и контекстом.
 - Олег Дулецкий 7.3.2026
 - [github](https://github.com/dog-64/llm_now?tab=readme-ov-file)
 
+<img src="_resources/llm_now/qr-llm-now.png" style="position:absolute; bottom:20px; left:20px; width:160px; height:160px;">
 ---
 ### Почему Claude Code
 
@@ -47,6 +51,10 @@ slideNumber: true
 
 - по подписке - 5 часовой и недельные лимиты
 - за токены - 3-5-20x дороже подписки
+- основная LLM - Sonnet
+- для ответственных или запутанных случаев - Opus
+- когда кончаются лимиты - GLM 4.7
+- иногда - Codex
 ---
 ### Другие клиенты
 
